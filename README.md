@@ -7,20 +7,20 @@ Landing page tĩnh một trang giới thiệu giải pháp chuyển đổi số 
 Có thể mở trực tiếp `index.html` trong trình duyệt. Để các hành vi trình duyệt hoạt động ổn định hơn, chạy một static server đơn giản trong thư mục gốc của repo:
 
 ```bash
-python3 -m http.server 4173 -d website
+python3 -m http.server 4173
 ```
 
 Sau đó mở `http://localhost:4173`.
 
 Website chỉ dùng HTML5, CSS3 và JavaScript thuần; không có backend, dependency, bước build hay kết nối với hệ thống quản lý.
 
-Bộ font **Be Vietnam Pro** đã được lưu cục bộ trong `website/assets/fonts/`, vì vậy hệ chữ tiếng Việt không phụ thuộc dịch vụ font bên ngoài. Nút **Đăng nhập** ở header, menu mobile và footer dẫn tới `https://clinic.lebamedical.com/login`.
+Bộ font **Be Vietnam Pro** đã được lưu cục bộ trong `assets/fonts/`, vì vậy hệ chữ tiếng Việt không phụ thuộc dịch vụ font bên ngoài. Nút **Đăng nhập** ở header, menu mobile và footer dẫn tới `https://clinic.lebamedical.com/login`.
 
 ## Cấu hình thông tin liên hệ
 
 Thông tin email và điện thoại chính thức chưa được cung cấp, vì vậy website chủ động hiển thị “Đang cập nhật” và không giả vờ gửi form thành công.
 
-Mở `website/script.js`, cập nhật cấu hình ở đầu tệp:
+Mở `script.js`, cập nhật cấu hình ở đầu tệp:
 
 ```js
 const CONTACT = {
@@ -36,9 +36,18 @@ Khi `email` được cấu hình, form sẽ hỏi người dùng trước khi m�
 - Thay thông tin email và số điện thoại chính thức trong `script.js`.
 - Thay nội dung placeholder của hộp “Chính sách bảo mật” trong `index.html` bằng chính sách đã được phê duyệt.
 - Rà soát lại phạm vi tính năng với repo sản phẩm đầy đủ. Tại thời điểm xây dựng, workspace không có `README.md`, `addons/`, `frontend/` hoặc `docs/marketing/`; nội dung hiện bám sát danh sách phân hệ trong đặc tả được cung cấp.
-- Nếu có ảnh marketing chính thức, sao chép vào `website/assets/` và sử dụng bằng đường dẫn độc lập với ứng dụng ERP.
+- Nếu có ảnh marketing chính thức, sao chép vào `assets/` và sử dụng bằng đường dẫn độc lập với ứng dụng ERP.
 
 ## Cấu trúc
+
+```text
+leba-medical-website/
+├── index.html
+├── styles.css
+├── script.js
+├── assets/
+└── README.md
+```
 
 - `index.html`: nội dung và cấu trúc landing page.
 - `styles.css`: nhận diện, bố cục responsive và trạng thái tương tác.
