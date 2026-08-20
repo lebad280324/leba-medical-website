@@ -11,6 +11,7 @@
   </head>
   <body>
     <a class="skip-link" href="#main-content">Chuyển đến nội dung chính</a>
+
     <header class="site-header" id="top">
       <div class="container header-inner">
         <a class="brand" href="#top" aria-label="LEBA Medical - Trang chủ">
@@ -32,12 +33,13 @@
     </header>
 
     <main id="main-content">
+      <!-- ── Hero ────────────────────────────────────────────────── -->
       <section class="hero" id="tong-quan">
-        <div class="hero-glow hero-glow-one"></div><div class="hero-glow hero-glow-two"></div>
+        <canvas id="particles-canvas" aria-hidden="true"></canvas>
         <div class="container hero-grid">
           <div class="hero-copy">
             <p class="eyebrow"><span></span> Giải pháp chuyển đổi số toàn diện</p>
-            <h1>Vận hành phòng khám <em>thông minh hơn.</em><br />Chăm sóc bệnh nhân <em>tốt hơn.</em></h1>
+            <h1>Vận hành phòng khám<br /><em class="typewriter-text">thông minh hơn.</em><span class="typewriter-cursor" aria-hidden="true"></span></h1>
             <p class="hero-lead">LEBA Medical kết nối dữ liệu, con người và toàn bộ hành trình bệnh nhân trên một nền tảng thống nhất — từ lịch hẹn đầu tiên đến chăm sóc sau điều trị.</p>
             <div class="hero-actions">
               <a class="button" href="#tu-van">Đăng ký tư vấn <span aria-hidden="true">→</span></a>
@@ -46,27 +48,79 @@
             <div class="hero-proof" aria-label="Đặc điểm nền tảng">
               <span><i>✓</i> Quy trình liên thông</span><span><i>✓</i> Dữ liệu tập trung</span><span><i>✓</i> Mở rộng đa chi nhánh</span>
             </div>
+            <!-- Stats bar -->
+            <div class="hero-stats" aria-label="Thống kê hệ thống">
+              <div class="stat-item">
+                <span class="stat-num" data-count="98">0</span>
+                <div class="stat-label">% uptime đảm bảo</div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-num" data-count="500" data-suffix="+">0</span>
+                <div class="stat-label">Phòng khám triển khai</div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-num" data-count="8">0</span>
+                <div class="stat-label">Phân hệ tích hợp</div>
+              </div>
+            </div>
           </div>
+
+          <!-- Dashboard mockup -->
           <div class="dashboard-wrap" aria-label="Minh họa bảng điều hành LEBA Medical">
             <div class="dashboard-orbit orbit-one"></div><div class="dashboard-orbit orbit-two"></div>
             <div class="dashboard">
               <span class="demo-label">Minh họa giao diện · Không phải dữ liệu thực</span>
               <div class="dash-topbar">
-                <div class="dash-brand"><img src="assets/leba-medical-logo.png" alt="" /><b>LEBA</b></div>
+                <div class="dash-brand"><img src="assets/leba-medical-logo.png" alt="" /><b>LEBA Medical</b></div>
+                <div class="dash-pills">
+                  <div class="dash-pill active"></div>
+                  <div class="dash-pill"></div>
+                  <div class="dash-pill"></div>
+                </div>
                 <div class="dash-search"></div><div class="dash-user"></div>
               </div>
               <div class="dash-body">
                 <aside><b></b><i></i><i></i><i></i><i></i><i></i></aside>
                 <div class="dash-content">
-                  <div class="dash-title"><span><small>TỔNG QUAN</small><strong>Điều hành phòng khám</strong></span><button>Hôm nay⌄</button></div>
+                  <div class="dash-title">
+                    <span><small>TỔNG QUAN</small><strong>Điều hành phòng khám</strong></span>
+                    <button>Hôm nay ⌄</button>
+                  </div>
                   <div class="dash-metrics">
-                    <article class="metric blue"><span class="metric-icon">↗</span><small>Lịch hẹn hôm nay</small><strong>24</strong><i>+ 4 so với hôm qua</i></article>
-                    <article class="metric cyan"><span class="metric-icon">✓</span><small>Đã tiếp đón</small><strong>18</strong><i>75% lịch hẹn</i></article>
-                    <article class="metric amber"><span class="metric-icon">!</span><small>Cần chăm sóc</small><strong>07</strong><i>Trong hôm nay</i></article>
+                    <article class="metric blue">
+                      <span class="metric-icon">↗</span>
+                      <small>Lịch hẹn hôm nay</small>
+                      <strong class="dash-count" data-target="24">0</strong>
+                      <i><span class="live-dot"></span>+ 4 so với hôm qua</i>
+                    </article>
+                    <article class="metric cyan">
+                      <span class="metric-icon">✓</span>
+                      <small>Đã tiếp đón</small>
+                      <strong class="dash-count" data-target="18">0</strong>
+                      <i>75% lịch hẹn</i>
+                    </article>
+                    <article class="metric amber">
+                      <span class="metric-icon">!</span>
+                      <small>Cần chăm sóc</small>
+                      <strong class="dash-count" data-target="7">0</strong>
+                      <i>Trong hôm nay</i>
+                    </article>
                   </div>
                   <div class="dash-lower">
-                    <article class="schedule"><div class="card-head"><b>Lịch hẹn</b><a> Xem tất cả</a></div><div class="appt"><time>08:30</time><span><b>Lịch khám A</b><small>Khám tổng quát</small></span><em>Đã đến</em></div><div class="appt"><time>09:15</time><span><b>Lịch điều trị B</b><small>Điều trị</small></span><em class="wait">Chờ</em></div><div class="appt"><time>10:00</time><span><b>Lịch tái khám C</b><small>Tái khám</small></span><em class="booked">Đã đặt</em></div></article>
-                    <article class="chart"><div class="card-head"><b>Vận hành tuần</b><a>↗</a></div><div class="bars"><i style="--h:46%"></i><i style="--h:65%"></i><i style="--h:54%"></i><i style="--h:82%"></i><i style="--h:70%"></i><i style="--h:92%"></i><i style="--h:62%"></i></div><div class="bar-labels"><span>T2</span><span>T3</span><span>T4</span><span>T5</span><span>T6</span><span>T7</span><span>CN</span></div></article>
+                    <article class="schedule">
+                      <div class="card-head"><b>Lịch hẹn</b><a>Xem tất cả</a></div>
+                      <div class="appt"><time>08:30</time><span><b>Lịch khám A</b><small>Khám tổng quát</small></span><em>Đã đến</em></div>
+                      <div class="appt"><time>09:15</time><span><b>Lịch điều trị B</b><small>Điều trị</small></span><em class="wait">Chờ</em></div>
+                      <div class="appt"><time>10:00</time><span><b>Lịch tái khám C</b><small>Tái khám</small></span><em class="booked">Đã đặt</em></div>
+                    </article>
+                    <article class="chart">
+                      <div class="card-head"><b>Vận hành tuần</b><a>↗</a></div>
+                      <div class="bars">
+                        <i style="--h:46%"></i><i style="--h:65%"></i><i style="--h:54%"></i>
+                        <i style="--h:82%"></i><i style="--h:70%"></i><i style="--h:92%"></i><i style="--h:62%"></i>
+                      </div>
+                      <div class="bar-labels"><span>T2</span><span>T3</span><span>T4</span><span>T5</span><span>T6</span><span>T7</span><span>CN</span></div>
+                    </article>
                   </div>
                 </div>
               </div>
@@ -76,6 +130,8 @@
           </div>
         </div>
       </section>
+
+      <!-- ── Problem Section ──────────────────────────────────────── -->
       <section class="problem-section section" aria-labelledby="problem-title">
         <div class="container">
           <div class="section-heading centered">
@@ -94,12 +150,13 @@
         </div>
       </section>
 
+      <!-- ── Daily Hub ────────────────────────────────────────────── -->
       <section class="daily-hub section" aria-labelledby="daily-title">
         <div class="container daily-layout">
           <div class="daily-copy">
             <p class="eyebrow light"><span></span> Tiện ích thiết thực mỗi ngày</p>
             <h2 id="daily-title">Mở một màn hình. Biết ngay hôm nay cần làm gì.</h2>
-            <p>Màn hình “Hôm nay” gom những thông tin ảnh hưởng trực tiếp đến trải nghiệm bệnh nhân và nhịp vận hành của phòng khám.</p>
+            <p>Màn hình "Hôm nay" gom những thông tin ảnh hưởng trực tiếp đến trải nghiệm bệnh nhân và nhịp vận hành của phòng khám.</p>
             <div class="daily-points">
               <article><span>01</span><div><h3>Lịch hẹn và bệnh nhân đang chờ</h3><p>Xem lịch sắp đến, trạng thái xác nhận, thời gian chờ và người phụ trách trong cùng một góc nhìn.</p></div></article>
               <article><span>02</span><div><h3>Việc cần xử lý được ưu tiên</h3><p>Nổi bật lịch chưa xác nhận, hồ sơ chưa hoàn thiện, công nợ đến hạn và vật tư sắp hết.</p></div></article>
@@ -107,18 +164,44 @@
             </div>
           </div>
           <div class="today-board" aria-label="Minh họa màn hình công việc hôm nay">
-            <div class="board-header"><div><small>TRUNG TÂM VẬN HÀNH</small><strong>Hôm nay</strong></div><span>Đang cập nhật</span></div>
+            <div class="board-header">
+              <div><small>TRUNG TÂM VẬN HÀNH</small><strong>Hôm nay</strong></div>
+              <span><span class="live-dot"></span>Đang cập nhật</span>
+            </div>
             <div class="board-grid">
-              <article class="board-card appointment-card"><div class="board-card-title"><span class="board-dot blue-dot"></span><b>Lịch hẹn sắp đến</b><small>Xem lịch →</small></div><div class="mini-row"><time>08:30</time><span><b>Khám tổng quát</b><small>Ghế điều trị 02</small></span><em>Đã xác nhận</em></div><div class="mini-row"><time>09:15</time><span><b>Điều trị theo kế hoạch</b><small>Phòng điều trị 01</small></span><em class="waiting">Đang chờ</em></div></article>
-              <article class="board-card queue-card"><div class="board-card-title"><span class="board-dot cyan-dot"></span><b>Bệnh nhân đang chờ</b><small>Điều phối →</small></div><div class="queue-status"><div class="queue-ring"><b>06</b><small>đang chờ</small></div><ul><li><span></span>Đã phân bác sĩ</li><li><span></span>Chờ bố trí ghế</li><li><span></span>Đang tiếp nhận</li></ul></div></article>
-              <article class="board-card action-card"><div class="board-card-title"><span class="board-dot amber-dot"></span><b>Việc cần xử lý</b><small>Ưu tiên</small></div><ul class="action-list"><li><i>!</i><span><b>Lịch hẹn chưa xác nhận</b><small>Cần liên hệ trước giờ hẹn</small></span></li><li><i>₫</i><span><b>Khoản thanh toán còn thiếu</b><small>Đến hạn xử lý</small></span></li><li><i>□</i><span><b>Vật tư dưới định mức</b><small>Kiểm tra tồn kho</small></span></li></ul></article>
-              <article class="board-card my-work-card"><div class="board-card-title"><span class="board-dot green-dot"></span><b>Việc của tôi</b><small>Trong ngày</small></div><div class="task-progress"><span style="--progress:74%"></span></div><div class="task-meta"><b>Công việc được giao</b><small>Theo dõi đúng hạn và quá hạn</small></div><div class="task-tags"><span>Chăm sóc</span><span>Tái khám</span><span>Nhắc việc</span></div></article>
+              <article class="board-card appointment-card">
+                <div class="board-card-title"><span class="board-dot blue-dot"></span><b>Lịch hẹn sắp đến</b><small>Xem lịch →</small></div>
+                <div class="mini-row"><time>08:30</time><span><b>Khám tổng quát</b><small>Ghế điều trị 02</small></span><em>Đã xác nhận</em></div>
+                <div class="mini-row"><time>09:15</time><span><b>Điều trị theo kế hoạch</b><small>Phòng điều trị 01</small></span><em class="waiting">Đang chờ</em></div>
+              </article>
+              <article class="board-card queue-card">
+                <div class="board-card-title"><span class="board-dot cyan-dot"></span><b>Bệnh nhân đang chờ</b><small>Điều phối →</small></div>
+                <div class="queue-status">
+                  <div class="queue-ring"><b>06</b><small>đang chờ</small></div>
+                  <ul><li><span></span>Đã phân bác sĩ</li><li><span></span>Chờ bố trí ghế</li><li><span></span>Đang tiếp nhận</li></ul>
+                </div>
+              </article>
+              <article class="board-card action-card">
+                <div class="board-card-title"><span class="board-dot amber-dot"></span><b>Việc cần xử lý</b><small>Ưu tiên</small></div>
+                <ul class="action-list">
+                  <li><i>!</i><span><b>Lịch hẹn chưa xác nhận</b><small>Cần liên hệ trước giờ hẹn</small></span></li>
+                  <li><i>₫</i><span><b>Khoản thanh toán còn thiếu</b><small>Đến hạn xử lý</small></span></li>
+                  <li><i>□</i><span><b>Vật tư dưới định mức</b><small>Kiểm tra tồn kho</small></span></li>
+                </ul>
+              </article>
+              <article class="board-card my-work-card">
+                <div class="board-card-title"><span class="board-dot green-dot"></span><b>Việc của tôi</b><small>Trong ngày</small></div>
+                <div class="task-progress"><span style="--progress:74%"></span></div>
+                <div class="task-meta"><b>Công việc được giao</b><small>Theo dõi đúng hạn và quá hạn</small></div>
+                <div class="task-tags"><span>Chăm sóc</span><span>Tái khám</span><span>Nhắc việc</span></div>
+              </article>
             </div>
             <p class="board-caption">Minh họa giao diện · Không phải dữ liệu thực</p>
           </div>
         </div>
       </section>
 
+      <!-- ── Solutions ────────────────────────────────────────────── -->
       <section class="solutions section" id="giai-phap" aria-labelledby="solutions-title">
         <div class="container">
           <div class="section-intro split-heading">
@@ -170,6 +253,7 @@
         </div>
       </section>
 
+      <!-- ── Role Section ──────────────────────────────────────────── -->
       <section class="role-section section" aria-labelledby="role-title">
         <div class="container role-layout">
           <div class="role-intro">
@@ -186,24 +270,25 @@
           </div>
           <div class="role-panels">
             <article id="role-owner" role="tabpanel" aria-labelledby="role-owner-tab">
-              <div class="panel-top"><span>01</span><p>GÓC NHÌN ĐIỀU HÀNH</p></div><h3>Nắm toàn cảnh mà không phải chờ tổng hợp thủ công.</h3><p class="panel-lead">Theo dõi vận hành, tài chính, hiệu suất và tình hình từng chi nhánh từ một luồng dữ liệu tập trung.</p><div class="panel-benefits"><div><i>↗</i><b>Theo dõi chỉ số cần thiết</b><small>Có bối cảnh để quyết định kịp thời.</small></div><div><i>⌘</i><b>So sánh theo đơn vị</b><small>Nhìn rõ khác biệt giữa các chi nhánh.</small></div><div><i>◎</i><b>Kiểm soát theo vai trò</b><small>Phân định trách nhiệm rõ ràng.</small></div></div>
+              <div class="panel-top"><span>01</span><p>GÓC NHÌN ĐIỀU HÀNH</p></div><h3>Nắm toàn cảnh mà không phải chờ tổng hợp thủ công.</h3><p class="panel-lead">Theo dõi vận hành, tài chính, hiệu suất và tình hình từng chi nhánh từ một luồng dữ liệu tập trung.</p><div class="panel-benefits"><div><i>↗</i><div><b>Theo dõi chỉ số cần thiết</b><small>Có bối cảnh để quyết định kịp thời.</small></div></div><div><i>⌘</i><div><b>So sánh theo đơn vị</b><small>Nhìn rõ khác biệt giữa các chi nhánh.</small></div></div><div><i>◎</i><div><b>Kiểm soát theo vai trò</b><small>Phân định trách nhiệm rõ ràng.</small></div></div></div>
             </article>
             <article id="role-manager" role="tabpanel" aria-labelledby="role-manager-tab" hidden>
-              <div class="panel-top"><span>02</span><p>GÓC NHÌN VẬN HÀNH</p></div><h3>Điều phối lịch, nguồn lực và công việc theo một quy trình chung.</h3><p class="panel-lead">Giảm thời gian theo dõi rời rạc và giúp các bộ phận phối hợp trên trạng thái công việc cập nhật.</p><div class="panel-benefits"><div><i>▦</i><b>Lịch trình rõ ràng</b><small>Điều phối bác sĩ, phòng và ghế.</small></div><div><i>✓</i><b>Giảm việc bỏ sót</b><small>Theo dõi nhiệm vụ theo tiến trình.</small></div><div><i>↻</i><b>Quy trình nhất quán</b><small>Áp dụng chung giữa các cơ sở.</small></div></div>
+              <div class="panel-top"><span>02</span><p>GÓC NHÌN VẬN HÀNH</p></div><h3>Điều phối lịch, nguồn lực và công việc theo một quy trình chung.</h3><p class="panel-lead">Giảm thời gian theo dõi rời rạc và giúp các bộ phận phối hợp trên trạng thái công việc cập nhật.</p><div class="panel-benefits"><div><i>▦</i><div><b>Lịch trình rõ ràng</b><small>Điều phối bác sĩ, phòng và ghế.</small></div></div><div><i>✓</i><div><b>Giảm việc bỏ sót</b><small>Theo dõi nhiệm vụ theo tiến trình.</small></div></div><div><i>↻</i><div><b>Quy trình nhất quán</b><small>Áp dụng chung giữa các cơ sở.</small></div></div></div>
             </article>
             <article id="role-doctor" role="tabpanel" aria-labelledby="role-doctor-tab" hidden>
-              <div class="panel-top"><span>03</span><p>GÓC NHÌN CHUYÊN MÔN</p></div><h3>Tiếp cận thông tin điều trị có hệ thống và liền mạch.</h3><p class="panel-lead">Hồ sơ, chẩn đoán, thủ thuật, hình ảnh, labo và tiến trình điều trị được đặt trong cùng bối cảnh.</p><div class="panel-benefits"><div><i>＋</i><b>Hồ sơ xuyên suốt</b><small>Tiếp nối lịch sử điều trị thuận tiện.</small></div><div><i>⌁</i><b>Tiến trình rõ ràng</b><small>Theo dõi các giai đoạn chuyên môn.</small></div><div><i>□</i><b>Thông tin tập trung</b><small>Giảm tìm kiếm trên nhiều nguồn.</small></div></div>
+              <div class="panel-top"><span>03</span><p>GÓC NHÌN CHUYÊN MÔN</p></div><h3>Tiếp cận thông tin điều trị có hệ thống và liền mạch.</h3><p class="panel-lead">Hồ sơ, chẩn đoán, thủ thuật, hình ảnh, labo và tiến trình điều trị được đặt trong cùng bối cảnh.</p><div class="panel-benefits"><div><i>＋</i><div><b>Hồ sơ xuyên suốt</b><small>Tiếp nối lịch sử điều trị thuận tiện.</small></div></div><div><i>⌁</i><div><b>Tiến trình rõ ràng</b><small>Theo dõi các giai đoạn chuyên môn.</small></div></div><div><i>□</i><div><b>Thông tin tập trung</b><small>Giảm tìm kiếm trên nhiều nguồn.</small></div></div></div>
             </article>
             <article id="role-care" role="tabpanel" aria-labelledby="role-care-tab" hidden>
-              <div class="panel-top"><span>04</span><p>GÓC NHÌN TUYẾN ĐẦU</p></div><h3>Chăm sóc đúng người, đúng thời điểm và đúng bối cảnh.</h3><p class="panel-lead">Từ tiếp nhận lead, đặt lịch, check-in đến nhắc tái khám và phản hồi sau điều trị.</p><div class="panel-benefits"><div><i>♡</i><b>Hiểu hành trình bệnh nhân</b><small>Nắm lịch sử tương tác trước khi liên hệ.</small></div><div><i>◷</i><b>Nhắc việc đúng lúc</b><small>Giảm phụ thuộc vào ghi nhớ cá nhân.</small></div><div><i>↗</i><b>Phản hồi có tiếp nối</b><small>Theo dõi đánh giá và khiếu nại.</small></div></div>
+              <div class="panel-top"><span>04</span><p>GÓC NHÌN TUYẾN ĐẦU</p></div><h3>Chăm sóc đúng người, đúng thời điểm và đúng bối cảnh.</h3><p class="panel-lead">Từ tiếp nhận lead, đặt lịch, check-in đến nhắc tái khám và phản hồi sau điều trị.</p><div class="panel-benefits"><div><i>♡</i><div><b>Hiểu hành trình bệnh nhân</b><small>Nắm lịch sử tương tác trước khi liên hệ.</small></div></div><div><i>◷</i><div><b>Nhắc việc đúng lúc</b><small>Giảm phụ thuộc vào ghi nhớ cá nhân.</small></div></div><div><i>↗</i><div><b>Phản hồi có tiếp nối</b><small>Theo dõi đánh giá và khiếu nại.</small></div></div></div>
             </article>
             <article id="role-backoffice" role="tabpanel" aria-labelledby="role-backoffice-tab" hidden>
-              <div class="panel-top"><span>05</span><p>GÓC NHÌN HẬU CẦN</p></div><h3>Kết nối nguồn lực, vật tư và dòng tiền với hoạt động thực tế.</h3><p class="panel-lead">Kho, thu chi, công nợ, chấm công, lương, hoa hồng và KPI cùng phục vụ một mô hình quản trị.</p><div class="panel-benefits"><div><i>◇</i><b>Đối chiếu thuận tiện</b><small>Giảm dữ liệu tách biệt giữa các bộ phận.</small></div><div><i>₫</i><b>Dòng tiền rõ ràng</b><small>Theo dõi thu chi và công nợ.</small></div><div><i>◎</i><b>Hiệu suất có cơ sở</b><small>Kết nối lịch làm việc và mục tiêu.</small></div></div>
+              <div class="panel-top"><span>05</span><p>GÓC NHÌN HẬU CẦN</p></div><h3>Kết nối nguồn lực, vật tư và dòng tiền với hoạt động thực tế.</h3><p class="panel-lead">Kho, thu chi, công nợ, chấm công, lương, hoa hồng và KPI cùng phục vụ một mô hình quản trị.</p><div class="panel-benefits"><div><i>◇</i><div><b>Đối chiếu thuận tiện</b><small>Giảm dữ liệu tách biệt giữa các bộ phận.</small></div></div><div><i>₫</i><div><b>Dòng tiền rõ ràng</b><small>Theo dõi thu chi và công nợ.</small></div></div><div><i>◎</i><div><b>Hiệu suất có cơ sở</b><small>Kết nối lịch làm việc và mục tiêu.</small></div></div></div>
             </article>
           </div>
         </div>
       </section>
 
+      <!-- ── Values ────────────────────────────────────────────────── -->
       <section class="values section" id="loi-ich" aria-labelledby="values-title">
         <div class="container values-layout">
           <div class="values-copy">
@@ -221,33 +306,46 @@
         </div>
       </section>
 
+      <!-- ── Journey / Automation Flow ────────────────────────────── -->
       <section class="journey section" id="quy-trinh" aria-labelledby="journey-title">
         <div class="container">
-          <div class="section-heading centered"><p class="eyebrow"><span></span> Quy trình vận hành liên thông</p><h2 id="journey-title">Một hành trình bệnh nhân. Một dòng dữ liệu xuyên suốt.</h2><p>Thông tin được tiếp nối qua từng giai đoạn để không có điểm chạm nào bị tách rời.</p></div>
+          <div class="section-heading centered">
+            <p class="eyebrow"><span></span> Quy trình vận hành liên thông</p>
+            <h2 id="journey-title">Một hành trình bệnh nhân. Một dòng dữ liệu xuyên suốt.</h2>
+            <p>Thông tin được tiếp nối qua từng giai đoạn để không có điểm chạm nào bị tách rời.</p>
+          </div>
           <div class="journey-flow" aria-label="Quy trình từ thu hút khách hàng đến quay lại">
-            <article><span>01</span><div class="flow-icon">⌁</div><h3>Thu hút<br />khách hàng</h3></article><i>→</i>
-            <article><span>02</span><div class="flow-icon">▦</div><h3>Đặt lịch</h3></article><i>→</i>
-            <article><span>03</span><div class="flow-icon">↳</div><h3>Tiếp đón</h3></article><i>→</i>
-            <article><span>04</span><div class="flow-icon">＋</div><h3>Khám &amp;<br />điều trị</h3></article><i>→</i>
-            <article><span>05</span><div class="flow-icon">₫</div><h3>Thanh toán</h3></article><i>→</i>
-            <article><span>06</span><div class="flow-icon">♡</div><h3>Chăm sóc<br />sau điều trị</h3></article><i>→</i>
-            <article><span>07</span><div class="flow-icon">↻</div><h3>Đánh giá<br />&amp; quay lại</h3></article>
+            <article><span>01</span><div class="flow-icon">⌁</div><h3><strong>Thu hút</strong><br />khách hàng</h3></article>
+            <i class="flow-connector" aria-hidden="true"></i>
+            <article><span>02</span><div class="flow-icon">▦</div><h3><strong>Đặt lịch</strong></h3></article>
+            <i class="flow-connector" aria-hidden="true"></i>
+            <article><span>03</span><div class="flow-icon">↳</div><h3><strong>Tiếp đón</strong></h3></article>
+            <i class="flow-connector" aria-hidden="true"></i>
+            <article><span>04</span><div class="flow-icon">＋</div><h3><strong>Khám &amp;</strong><br />điều trị</h3></article>
+            <i class="flow-connector" aria-hidden="true"></i>
+            <article><span>05</span><div class="flow-icon">₫</div><h3><strong>Thanh toán</strong></h3></article>
+            <i class="flow-connector" aria-hidden="true"></i>
+            <article><span>06</span><div class="flow-icon">♡</div><h3><strong>Chăm sóc</strong><br />sau điều trị</h3></article>
+            <i class="flow-connector" aria-hidden="true"></i>
+            <article><span>07</span><div class="flow-icon">↻</div><h3><strong>Đánh giá</strong><br />&amp; quay lại</h3></article>
           </div>
         </div>
       </section>
 
+      <!-- ── Connected ─────────────────────────────────────────────── -->
       <section class="connected-section section" aria-labelledby="connected-title">
         <div class="container">
           <div class="section-heading centered"><p class="eyebrow"><span></span> Từ rời rạc đến liên thông</p><h2 id="connected-title">Một thay đổi trong cách tổ chức công việc hằng ngày.</h2><p>Không chỉ số hóa biểu mẫu, LEBA Medical hướng tới việc nối liền dữ liệu và trách nhiệm giữa các bộ phận.</p></div>
           <div class="connected-grid">
-            <article class="before-card"><div class="comparison-label"><span></span> Khi công cụ còn rời rạc</div><ul><li>Dữ liệu được nhập lại ở nhiều bảng tính</li><li>Thông tin bệnh nhân bị chia nhỏ theo bộ phận</li><li>Trạng thái công việc phải hỏi lại thủ công</li><li>Báo cáo cần nhiều thời gian tổng hợp</li><li>Mỗi chi nhánh hình thành một cách làm riêng</li></ul></article>
+            <article class="before-card"><div class="comparison-label"><span></span>Khi công cụ còn rời rạc</div><ul><li>Dữ liệu được nhập lại ở nhiều bảng tính</li><li>Thông tin bệnh nhân bị chia nhỏ theo bộ phận</li><li>Trạng thái công việc phải hỏi lại thủ công</li><li>Báo cáo cần nhiều thời gian tổng hợp</li><li>Mỗi chi nhánh hình thành một cách làm riêng</li></ul></article>
             <div class="comparison-arrow" aria-hidden="true"><span>→</span><small>CHUYỂN ĐỔI</small></div>
-            <article class="after-card"><div class="comparison-label"><span></span> Khi vận hành trên một nền tảng</div><ul><li>Mỗi dữ liệu phục vụ nhiều bước công việc</li><li>Hành trình bệnh nhân được tiếp nối xuyên suốt</li><li>Trạng thái và trách nhiệm được thể hiện rõ</li><li>Thông tin quản trị sẵn sàng để theo dõi</li><li>Toàn chuỗi cùng vận hành trên một quy trình chung</li></ul></article>
+            <article class="after-card"><div class="comparison-label"><span></span>Khi vận hành trên một nền tảng</div><ul><li>Mỗi dữ liệu phục vụ nhiều bước công việc</li><li>Hành trình bệnh nhân được tiếp nối xuyên suốt</li><li>Trạng thái và trách nhiệm được thể hiện rõ</li><li>Thông tin quản trị sẵn sàng để theo dõi</li><li>Toàn chuỗi cùng vận hành trên một quy trình chung</li></ul></article>
           </div>
-          <div class="capability-strip"><span>Hồ sơ tập trung</span><i></i><span>Lịch hẹn liền mạch</span><i></i><span>Điều trị có tiến trình</span><i></i><span>Tài chính liên kết</span><i></i><span>Quản trị đa chi nhánh</span></div>
+          <div class="capability-strip"><span>Hồ sơ tập trung</span><span>Lịch hẹn liền mạch</span><span>Điều trị có tiến trình</span><span>Tài chính liên kết</span><span>Quản trị đa chi nhánh</span></div>
         </div>
       </section>
 
+      <!-- ── Models ─────────────────────────────────────────────────── -->
       <section class="models section" aria-labelledby="models-title">
         <div class="container">
           <div class="section-intro split-heading"><div><p class="eyebrow"><span></span> Phù hợp theo từng mô hình</p><h2 id="models-title">Bắt đầu đúng với quy mô hôm nay. Sẵn sàng cho bước phát triển tiếp theo.</h2></div><p>Giải pháp được tiếp cận theo bài toán vận hành thực tế, không buộc mọi tổ chức phải đi theo một lộ trình giống nhau.</p></div>
@@ -259,16 +357,21 @@
         </div>
       </section>
 
+      <!-- ── Platform ───────────────────────────────────────────────── -->
       <section class="platform section" aria-labelledby="platform-title">
         <div class="container platform-grid">
           <div class="platform-visual" aria-hidden="true">
             <div class="core"><img src="assets/leba-medical-logo.png" alt="" /><b>LEBA</b><small>Nền tảng quản trị</small></div>
-            <div class="node node-a"><span>⌂</span>Đa chi nhánh</div><div class="node node-b"><span>◎</span>Phân quyền</div><div class="node node-c"><span>↻</span>Nhật ký</div><div class="node node-d"><span>↗</span>Mở rộng</div>
+            <div class="node node-a"><span>⌂</span>Đa chi nhánh</div>
+            <div class="node node-b"><span>◎</span>Phân quyền</div>
+            <div class="node node-c"><span>↻</span>Nhật ký</div>
+            <div class="node node-d"><span>↗</span>Mở rộng</div>
           </div>
           <div class="platform-copy"><p class="eyebrow"><span></span> Nền tảng quản trị</p><h2 id="platform-title">Kiểm soát tập trung. Vận hành linh hoạt.</h2><p>Một nền tảng quản trị giúp tổ chức duy trì tính nhất quán khi quy mô, đội ngũ và nhu cầu vận hành thay đổi.</p><ul class="check-list"><li><b>Quản lý đa công ty và đa chi nhánh</b><span>Theo dõi toàn hệ thống nhưng vẫn giữ được góc nhìn theo từng đơn vị.</span></li><li><b>Phân quyền theo vai trò</b><span>Trao đúng quyền tiếp cận cho từng vị trí trong quy trình.</span></li><li><b>Nhật ký hoạt động</b><span>Hỗ trợ truy vết các thao tác quan trọng trong vận hành.</span></li><li><b>Dữ liệu và quy trình tập trung</b><span>Tạo một chuẩn làm việc chung giữa các bộ phận.</span></li><li><b>Mở rộng theo từng giai đoạn</b><span>Ưu tiên bài toán cấp thiết trước và phát triển theo lộ trình.</span></li></ul></div>
         </div>
       </section>
 
+      <!-- ── Implementation ─────────────────────────────────────────── -->
       <section class="implementation section" aria-labelledby="implementation-title">
         <div class="container">
           <div class="section-heading centered"><p class="eyebrow"><span></span> Quy trình triển khai</p><h2 id="implementation-title">Từ quy trình hiện tại đến một cách vận hành thống nhất.</h2><p>Mỗi giai đoạn đều đặt trọng tâm vào khả năng áp dụng thực tế của đội ngũ.</p></div>
@@ -281,6 +384,7 @@
         </div>
       </section>
 
+      <!-- ── FAQ ───────────────────────────────────────────────────── -->
       <section class="faq section" id="faq" aria-labelledby="faq-title">
         <div class="container faq-grid">
           <div class="faq-intro"><p class="eyebrow"><span></span> Câu hỏi thường gặp</p><h2 id="faq-title">Thông tin trước khi bắt đầu.</h2><p>Nếu câu hỏi của bạn chưa có ở đây, hãy để lại nhu cầu để đội ngũ LEBA Medical cùng trao đổi.</p><a class="text-link dark" href="#tu-van">Đăng ký trao đổi <span>→</span></a></div>
@@ -295,6 +399,7 @@
         </div>
       </section>
 
+      <!-- ── Contact ───────────────────────────────────────────────── -->
       <section class="contact section" id="tu-van" aria-labelledby="contact-title">
         <div class="container contact-shell">
           <div class="contact-copy"><p class="eyebrow light"><span></span> Bắt đầu từ bài toán thực tế</p><h2 id="contact-title">Sẵn sàng bắt đầu hành trình chuyển đổi số?</h2><p>Chia sẻ nhu cầu của bạn. Đội ngũ LEBA Medical sẽ cùng nhìn lại quy trình và xác định điểm bắt đầu phù hợp.</p><div class="contact-note"><span>i</span><p><b>Website không tự động gửi dữ liệu.</b><br />Sau khi xác nhận, nội dung tư vấn sẽ được chuẩn bị để bạn sao chép hoặc gửi qua ứng dụng email khi địa chỉ liên hệ chính thức được cấu hình.</p></div></div>
@@ -329,7 +434,6 @@
       <button type="button" class="dialog-close" aria-label="Đóng">×</button>
       <span class="dialog-mark">✓</span><h2 id="dialog-title">Nội dung đã sẵn sàng</h2><p>Website tĩnh này chưa kết nối hệ thống nhận yêu cầu. Bạn có thể sao chép nội dung bên dưới để gửi qua kênh liên hệ chính thức.</p><textarea readonly rows="10"></textarea><div class="dialog-actions"><button type="button" class="button copy-request">Sao chép nội dung</button><button type="button" class="button button-ghost cancel-dialog">Đóng</button></div><p class="copy-status" role="status"></p>
     </dialog>
-
     <dialog class="privacy-dialog" aria-labelledby="privacy-title"><button type="button" class="dialog-close" aria-label="Đóng">×</button><h2 id="privacy-title">Chính sách bảo mật</h2><p>Nội dung chính sách chính thức chưa được cung cấp. Cần thay phần này trước khi website được công bố và trước khi kích hoạt bất kỳ kênh tiếp nhận dữ liệu nào.</p><button type="button" class="button cancel-dialog">Đã hiểu</button></dialog>
   </body>
 </html>
